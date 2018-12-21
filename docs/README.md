@@ -19,3 +19,5 @@ With SmoothSwing V3, TeensySaber V3 was getting some attention from people, but 
 At first, I was thinking of using the same components that make up a Teensy to make the all-in-one board, but it turned out to be complicated and expensive. Instead I found another board called a “Butterfly”, which had nearly identical capabilities and an already functional arduino plugin. Even better, the Butterfly was 100% open source (the teensy is only *mostly* open source).
 
 I spent most of the Christmas vacation last year designing the Proffieboard, and it took another couple of months of testing to get a working prototype, but it’s been a lot of fun.
+
+Fredrik Hubinette
