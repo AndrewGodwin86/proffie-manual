@@ -6,5 +6,5 @@
 ## User Manual
 - by Fredrik Hubinette and Dmitry Shtok
 
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/AndrewGodwin86/proffie-manual/)
 [Get Started](#Introduction)
