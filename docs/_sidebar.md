@@ -1,4 +1,4 @@
-* [Introduction](/)
+* [Introduction](/#Introduction)
 - Specs & Features
   - [Features](features.md)
   - [Demo Videos](demo-videos.md)
@@ -17,6 +17,6 @@
   - [Firmware upload and update](proffie/firmware-upload-update.md)
   - [Changing sound board parameters](proffie/changing-sound-board-params.md)
 
-- [Recommended SD Cards](sd-cards.md)
+- [Recommended SD Cards](recommended-sd-cards.md)
 - [Wire Gauge & Current Rating Test](wire-gauge-current-rating.md)
 - [Troubleshooting](troubleshooting.md)
