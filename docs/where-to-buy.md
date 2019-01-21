@@ -31,15 +31,15 @@
 - [Various Switches (UK) – TheSaberArmory](https://thesaberarmory.com/product-category/components/switches/page/2/)
 - [SCW Neopixel blade Pogo connector](https://www.facebook.com/ShtokCustomWorx/)
 - [TCSS Neopixel blade Pogo connector](https://www.thecustomsabershop.com/Pre-Soldered-NeoPixel-PCB-connector-and-11-pin-set-P1416.aspx)
-- [GX16 Neopixel/string blade connectors](https://www.ebay.com/itm/GX16-Aviation-Plug-Male-Female-Wire-Panel-Metal-Connector-2-3-4-5-6-8-9-Pin-16mm/382191101904?hash=item58fc5d67d0:m:mj0zGVK_EYpjEmxPtRnowIA:rk:11:pf:0)
+- [GX16 Neopixel/string blade connectors](https://www.ebay.com/itm/GX16-Aviation-Plug-Male-Female-Wire-Panel-Metal-Connector-2-3-4-5-6-8-9-Pin-16mm/382191101904)
 - [Various Speakers (UK) – TheSaberArmory](https://thesaberarmory.com/product-category/components/speakers/)
 - [Various Speakers (UK) - JQ Sabers](https://www.jqsabers.com/product-category/parts/sound-controllers/sounds/page/2/)
 - [Various Speakers (Canada/USA) – TheCustomSaberShop](https://www.thecustomsabershop.com/Speakers-C154.aspx)
 - [2W and 3W Speakers – Saber Essentials](https://www.facebook.com/SelfPaidServant/)
-- [4W Speakers – ebay](https://www.ebay.com/itm/2pcs-1-inch-4Ohm-4W-full-range-speaker-On-stage-Crystal-Bluetooth-For-HARMAN-JBL/162707444394?hash=item25e21e92aa:g:mFIAAOSwF1dUR6uD:rk:1:pf:0)
+- [4W Speakers – ebay](https://www.ebay.com/itm/2pcs-1-inch-4Ohm-4W-full-range-speaker-On-stage-Crystal-Bluetooth-For-HARMAN-JBL/162707444394)
 - [FSC-BT630 bluetooth module](https://www.alibaba.com/product-detail/Small-size-Nordic-nRF-52832-with_60705985493.html?tracelog=null)
 - [FSC-BT909 bluetooth module](https://www.alibaba.com/product-detail/Class-1-FCC-long-range-module_60701716479.html?tracelog=null)
 
 ## 3D-Printed Chassis
-[ShtokCustomWorx on Shapeways](https://www.shapeways.com/shops/shtokyd?section=1.24%22+TCSS+MHS+compatible+chassis&s=0)
+[ShtokCustomWorx on Shapeways](https://www.shapeways.com/shops/shtokyd?section=1.24%22+TCSS+MHS+compatible+chassis&s=0)  
 [GOTH-3Designs on Shapeways](https://www.shapeways.com/shops/goth-customsabers?section=M10+-+Open+Source+Boards&s=0)
