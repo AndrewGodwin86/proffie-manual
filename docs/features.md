@@ -9,9 +9,10 @@
 - Dimensions: 18 x 39.5 x 9mm (with micro USB port and micro SD card)
 - 2-pcb boards stack design
 
-## Common
+## Common Features
 - 100% Open-Source, you may add any feature you like (GPLv3)
-- Power supply: 2.6-4.5 Volts, up to 10A per LED output 1-6; single Li-Ion 3.6-3.7V (low 2.6V, full 4.2V) battery recommended - Speaker: 4 ohm or 8 ohm, 2W (with lower volume) or 3-5W (recommended)
+- Power supply: 2.6-4.5 Volts, up to 10A per LED output 1-6; single Li-Ion 3.6-3.7V (low 2.6V, full 4.2V) battery recommended
+- Speaker: 4 ohm or 8 ohm, 2W (with lower volume) or 3-5W (recommended)
 - Unlimited amount of sound banks/fonts, supports regular (Plecter, NEC) and “Smoothswing” sound fonts
 - Sound FX (WAV sound files): boot, blaster blocking, lockup, hum, swing, clash, drag, font, force, ingnition, retraction
 - Light FX: blade flickering, pulsing, flash on clash, drag, stab, blaster blocking, lockup and other
