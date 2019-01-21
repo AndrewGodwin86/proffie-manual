@@ -6,7 +6,12 @@ To test your SD card speed simply hook up ProffieBoard to PC, open Arduino IDE, 
 ![Recommended SD Cards](_media/recommended-sd-cards.png)
 
 ## Genuine and Fake SanDisk 4Gb Class 4 microSD
-There are a lot of fake (chinese copies) microSD cards on the market from aliexpress, ebay, amazon, etc... They look very similar to genuine cards but are a bit different though and have a twice lower writing/reading speed. Here is an example of a SanDisk 4Gb Class 4 card: one is genuine with 1378.12 kb/s speed and the other one is fake with 677 kb/s speed I got from ebay seller.
-Be carefull and pay attention to how the actual card looks, if you are not sure, ask seller for the real photo of SD card he sells!
+There are a lot of fake (chinese copies) microSD cards on the market from aliexpress, ebay, amazon, etc... They look very similar to genuine cards but are a bit different though and have a twice lower writing/reading speed.  
+
+Here is an example of a SanDisk 4Gb Class 4 card:  
+- genuine with read/write speed of 1378.12 kb/s.
+- fake had read/write speed of 677 kb/s from Ebay.
+
+Be careful and pay attention to how the actual card looks, if you are not sure, ask seller for the real photo of SD card he sells!
 
 ![Genuine/Fake SD Cards](_media/genuine-fake-sd-cards.png)
