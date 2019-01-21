@@ -12,7 +12,7 @@ Around this time, I got kind of stuck with how to synthesize all the sounds a li
 
 Since I didn’t really have a good idea for how to make that interactivity happen, I took on a different challenge instead: Make it smaller. For the TeensySaber V2, I decided to try to make my own circuit board. That meant integrating some components from the prop shield, the sd card reader, the voltage booster and the FETs into a single board. To make things interesting, I bought a Korbanth OWK, which has an inner diameter of 7/8 inches, and my goal was to fit everything in there. It took a while to do, but the result was the TeensySaber V2 board. The V2 fits really great inside an OWK, without cutting into the inner chassis parts, and was generally a great success, but the sound quality wasn’t as good as I wanted it to be, so eventually I designed he TeensySaber V3, which is mostly the same as the V2, but uses a digital 3W amplifier.
 
-As I was working on the TeensySaber V3, this guy Thexter showed up on a couple of forums, with some great videos showing off an algorithm for better swing sounds. Since this was what I wanted all along, I couldn’t wait until he provided a description of his algorithm so that I could implement it. Lucky for me, he didn’t mind describing his algorithm, so I imple- mented it. My implementation never really sounded as good as his videos though, but that’s probably because I’m not really a font designer. Later, Thexter came back with an improved version, which is what we now call “SmoothSwing V2”.
+As I was working on the TeensySaber V3, this guy Thexter showed up on a couple of forums, with some great videos showing off an algorithm for better swing sounds. Since this was what I wanted all along, I couldn’t wait until he provided a description of his algorithm so that I could implement it. Lucky for me, he didn’t mind describing his algorithm, so I implemented it. My implementation never really sounded as good as his videos though, but that’s probably because I’m not really a font designer. Later, Thexter came back with an improved version, which is what we now call “SmoothSwing V2”.
 
 With SmoothSwing V3, TeensySaber V3 was getting some attention from people, but a lot of people still thought it was too big, since it’s made out of two boards sandwiched together. The sandwiching also creates extra work for installers and extra complications for hobbyists, so it was time to try to put everything together into one board.
 
@@ -21,3 +21,6 @@ At first, I was thinking of using the same components that make up a Teensy to m
 I spent most of the Christmas vacation last year designing the Proffieboard, and it took another couple of months of testing to get a working prototype, but it’s been a lot of fun.
 
 Fredrik Hubinette
+
+## Read full interview on SaberSourcing
+[Proffieboard lightsaber controller developer Fredrik Hubinette interview](https://sabersourcing.com/2018/11/20/make-it-smaller-an-interview-proffieboard-lightsaber-controller-developer-fredrik-hubinette/)
