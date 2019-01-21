@@ -18,8 +18,10 @@ All blade effects, LED configuration, volume level, clash sensitivity etc. are c
 
 ## Blade styles
 ProffieBoard and TeensySaber use Blade Styles for the main saber blade and any other accent leds to define all light effects (color changing, flashes, flickering, delays, ignition/retraction timing etc...).
-Use Blade Style Editor to create and adjust Blade Styles. Megtooth Sith Sabers did a great video tutorial where he shows and explains how to use Blade Style Editor. Also you can grab some pre-made Blade Styles or share yours here on TRA forums.
-A Blade Style example of simple flickering Green blade with Spark on start, Clash, Blaster, Lockup and Drag, Ignition/Retraction effects:
+
+Use [Blade Style Editor](https://fredrik.hubbe.net/lightsaber/style_editor.html) to create and adjust Blade Styles. **Megtooth Sith Sabers** did a great [video tutorial](https://youtu.be/2H4XMSKajCI) where he shows and explains how to use Blade Style Editor. Also you can grab some pre-made Blade Styles or share yours [here on TRA forums](http://therebelarmory.com/thread/9273/teensysaber-blade-style-sharing-thread).
+
+A Blade Style example of simple **flickering Green** blade with **Spark on start**, **Clash**, **Blaster**, **Lockup** and **Drag**, **Ignition/Retraction** effects:
 
 ```c
 StylePtr<InOutHelper<SimpleClash<Lockup<Blast<OnSpark<AudioFlicker<Rgb<0,255,0>,Rgb<50,100,0>>,Rgb<255,255,0>,150>,Rgb<255,50,0>>,AudioFlicker<Rgb<100,255,0>,Rgb<255,0,150>>>,Rgb<255,100,150>,40>,200,300,Black>>
