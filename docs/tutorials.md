@@ -7,18 +7,15 @@
 [LED Calculator (TCSS)](https://www.thecustomsabershop.com/LedCalc.aspx)
 
 ## More Info
-TeensySaber V3 sound board instructions
+- [TeensySaber V3 sound board instructions](https://fredrik.hubbe.net/lightsaber/v3/)
+- [ProffieBoard sound board instructions](https://fredrik.hubbe.net/lightsaber/v4/)
+- [”Blade style sharing” - here you can find and share custom blade styles](http://therebelarmory.com/thread/9273/teensysaber-blade-style-sharing-thread)
+- [Web Blade Style Editor 1 (default)](https://fredrik.hubbe.net/lightsaber/style_editor.html)
+- [Web Blade Style Editor 2 (restyle)](https://boikonur.github.io/StyleEditor/index.html)
+- [Here you can get regular (Plecter, NEC) or “Smoothswing” sound fonts](http://www.saberfont.com/)
+- [ProffieOS/ProffieBoard/TeensySaber wiki on GitHub](https://github.com/profezzorn/ProffieOS/wiki?fbclid=IwAR19v6bJF2uOZC8hqqtvKWD6F5f8VusJEEy9dojTb3luvF_cyuyEo2vedvs)
+- [Profezzorn’s Lab on The Rebel Armory forums](http://therebelarmory.com/board/97/profezzorns-lab)
+- [Profezzorn’s Lab on FX-sabers forums](https://www.fx-sabers.com/forum/index.php?board=185.0)
+- [Ask your question in facebook group](https://www.facebook.com/groups/288564715213016/)
 
-ProffieBoard sound board instructions
-
-”Blade style sharing” - here you can find and share custom blade styles Web Blade Style Editor 1 (default)
-
-Web Blade Style Editor 2 (restyle)
-
-Here you can get regular (Plecter, NEC) or “Smoothswing” sound fonts ProffieOS/ProffieBoard/TeensySaber wiki on GitHub
-
-Profezzorn’s Lab on The Rebel Armory forums
-
-Profezzorn’s Lab on FX-sabers forums
-
-Ask your question in facebook group
+[Get the latest ProffieOS firmware](https://fredrik.hubbe.net/lightsaber/proffieos.html)
