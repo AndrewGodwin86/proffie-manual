@@ -42,18 +42,46 @@ or on the bottom depending on where you want to put Teensy 3.2 board.
 
 [LED Resistor Calculator](https://www.thecustomsabershop.com/LedCalc.aspx)
 ### config.h file setup 
+Use a given or build your wiring diagram on [THIS PAGE](https://fredrik.hubbe.net/lightsaber/v3/), then open any _config.h file in the “lightsaber>config” folder directory in any Text Editor (Notepad - to see code correctly in Notepad, Cut-and-Paste it to WordPad, then Cut-and-Paste it back to Notepad, Save), Ctrl+A (select all text) and Delete it, then Copy-and-Paste (Ctrl+C, Ctrl+V) your wiring diagram config code (example below) into empty _config.h file and Save it under new name. Follow [these instructions](/teensy/firmware-upload-update) to upload it to the board.
 
 ## Basic Neopixel wiring diagram
+![Teensy Basic Neopixel diagram](../_media/teensy-basic-neopixel.png)
+
 ### config.h file setup 
+Use a given or build your wiring diagram on [THIS PAGE](https://fredrik.hubbe.net/lightsaber/v3/), then open any _config.h file in the “lightsaber>config” folder directory in any Text Editor (Notepad - to see code correctly in Notepad, Cut-and-Paste it to WordPad, then Cut-and-Paste it back to Notepad, Save), Ctrl+A (select all text) and Delete it, then Copy-and-Paste (Ctrl+C, Ctrl+V) your wiring diagram config code (example below) into empty _config.h file and Save it under new name. Follow [these instructions](/teensy/firmware-upload-update) to upload it to the board.
 
 ## Basic Segmented string wiring diagram
+![Teensy Basic Segmented String diagram](../_media/teensy-basic-segmented-string.png)
+
+Calculate resistors for each led segment of the blade string depending on which leds are used. 5mm leds have max drive current around 25mA per led, when 10mm leds can be 100mA and 200mA per led.  
+So pay attention to your led max current and Forward Voltage (Vf) when calculating a segment resistor resistence as well as its wattage. Also choose wire gauges accordingly to meet segments and total blade max current draw level.
+
+[LED Resistor Calculator](https://www.thecustomsabershop.com/LedCalc.aspx)
+
 ### config.h file setup 
 
+Use a given or build your wiring diagram on [THIS PAGE](https://fredrik.hubbe.net/lightsaber/v3/), then open any _config.h file in the “lightsaber>config” folder directory in any Text Editor (Notepad - to see code correctly in Notepad, Cut-and-Paste it to WordPad, then Cut-and-Paste it back to Notepad, Save), Ctrl+A (select all text) and Delete it, then Copy-and-Paste (Ctrl+C, Ctrl+V) your wiring diagram config code (example below) into empty _config.h file and Save it under new name. Follow the instructions on page 22 to upload it to the board.
+
 ## Accent LEDs wiring diagram (optional)
+Accent LEDs work with TeensySaber board as additional “blades” when powered by LED outputs 4, 5, 6 with FETs. So they can have any effect that blade can have. If no effects needed, accent led can be powered just by a 3.3V output pad (power-on led indication).
+
+![Teensy Accent LEDs](../_media/teensy-accent-leds.png)
 
 ## OLED display wiring diagram (optional)
+SSD1306 128x32 pixels OLED display allows to show battery level, current preset name, play different animations and even simple games. It can be wired to any blade configuration and requires just one additional line in the code to work. You can get monochrome display in white or blue color.
+
+![Teensy OLED Display diagram](../_media/teensy-oled-display.png)
+
+[SSD1306](https://www.ebay.com/itm/Mini-0-91-Zoll-OLED-SSD1306-Display-I2C-IIC-Arduino-Raspberry-128x32-weiss/253295920124) - with blue or white display color select.  
+[SSD1306](https://www.ebay.com/itm/0-91-128x32-I2C-IIC-Serial-Blue-OLED-LCD-LED-Display-Module-12832-SSD1306/182371257748) - cheaper price  
+[SSD1306 just screen](https://www.ebay.com/itm/128x32-White-Blue-0-91in-OLED-bare-screen-Module-OLED-SSD1306-LCD-AU/323299955387) - blue or white select
+
 
 ## Bluetooth module wiring diagram (optional)
+Bluetooth modules **FSC-BT630** and **FSC-BT909** from Feasycom have been chosen over other modules on the market because of the best pcb size, quality, functionality and price point.  
+**FSC-BT630** has same functionality as **FSC-BT909** but twice smaller size, lower signal strength and only BLE protocol support (no SPP).  
+Both modules are recommended for use with **ForceSync** mobile app (currently in development) from ShtokCustomWorx.
+
 
 ### Bluetooth module setup
 
