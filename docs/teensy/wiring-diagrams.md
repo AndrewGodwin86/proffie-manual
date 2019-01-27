@@ -82,8 +82,54 @@ Bluetooth modules **FSC-BT630** and **FSC-BT909** from Feasycom have been chosen
 **FSC-BT630** has same functionality as **FSC-BT909** but twice smaller size, lower signal strength and only BLE protocol support (no SPP).  
 Both modules are recommended for use with **ForceSync** mobile app (currently in development) from ShtokCustomWorx.
 
+![Teensy Bluetooth Modules](../_media/teensy-bluetooth-modules.png)
+
+For maximum bluetooth signal efficiency for both modules follow these rules:  
+1. Place BT module as far from Negative (GND) wires and battery as possible
+2. Place BT module as far from the speaker as possible
+3. Place BT module under some holes in the hilt or plastic parts around antenna
+
+![Teensy Bluetooth Module Wiring Diagram](../_media/teensy-bluetooth-module-wiring.png)
 
 ### Bluetooth module setup
+
+FSC-BT630 and FSC-BT909 bluetooth modules are programmed by AT commands using any serial terminal software. 
+But from some vendors they come already pre-programmed, so can be wired and installed straight out of the box. 
+Then you just need to connect to one of these two modules and set bluetooth name and pin code via FeasyBlue app  
+(download on Google Play or App Store) on Android or iOS smartphone/tablet device. 
+Also both modules support OTA firmware upgrade via bluetooth from Android device using FeasyBlue app.
+
+
+Add #define ENABLE_SERIAL line to your TeensySaber config.h file:
+```c
+#define ENABLE_WS2811
+#define ENABLE_SD
+#define ENABLE_SERIAL
+
+#endif
+
+#ifdef CONFIG PRESETS
+```
+
+If you buy directly from **Feasycom** manufacturer on alibaba, make sure to ask seller to pre-program FSC-BT909 modules with these AT commands, or you need to program them yourself via any Serial Terminal software on PC (like **YAT** or **Serial Monitor** in Arduino IDE):
+
+```c
+AT+PROFILE=5  
+AT+COD=00050C  
+AT+TPMODE=1  
+AT+AUTOCONN=0  
+AT+PAIR=1  
+AT+SSP=0  
+AT+BAUD=115200  
+AT+BTEN=1  
+```
+
+For how to connect any bluetooth module to PC using a USB-to-TTL cable please read this thread - [LINK](http://therebelarmory.com/thread/8699/wireless-bluetooth-plecter-sound-boards). Follow the specific module pinout for connecting wires.
+
+**FSC-BT630** modules currently have no settings to program, they work straight out of the box.
+Then you just need to set **passcode** and **name** for both modules via **FeasyBlue app** using your smartphone.
+
+Both modules support **OTA firmware upgrade** (Over The Air) via bluetooth SPP connection (with Android smartphones only at the moment), so if new features are added to the bluetooth module firmware in the future by Feasycom, modules can be easily updated inside the saber without rewiring.
 
 ## Blade ID resistor functions
 COMING SOON
