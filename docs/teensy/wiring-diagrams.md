@@ -136,6 +136,13 @@ COMING SOON
 
 ## More wiring diagrams
 
+[TeensySaber v3 FULL wiring diagrams](https://fredrik.hubbe.net/lightsaber/v3/)
+
+Scroll the page down till you see the interactive diagram. Above the diagram there are components selection options. Build your saber setup with it and follow diagram to wire your board. Then you need to copy the configuration code below and paste it into your _config.h file.
+
+![Teensy Full Wiring Diagrams](../_media/teensy-more-wiring-diagrams.png)
+
+
 ## How to use it
 **Blade ignition/retraction** – assuming you have at least one button, pressing it briefly should turn the saber on or off. If you have an AUX button, pressing it briefly should also turn the saber on and off. If you have no buttons, you can turn the saber on and off by twisting your wrist back and forth. Note that the motion has to be done long enough to count, so a very quick flick of the wrist will not work.  
 **Turn On muted** – double-click power button  
