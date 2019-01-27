@@ -62,6 +62,40 @@ So pay attention to your led max current and Forward Voltage (Vf) when calculati
 
 Use a given or build your wiring diagram on [THIS PAGE](https://fredrik.hubbe.net/lightsaber/v3/), then open any _config.h file in the “lightsaber>config” folder directory in any Text Editor (Notepad - to see code correctly in Notepad, Cut-and-Paste it to WordPad, then Cut-and-Paste it back to Notepad, Save), Ctrl+A (select all text) and Delete it, then Copy-and-Paste (Ctrl+C, Ctrl+V) your wiring diagram config code (example below) into empty _config.h file and Save it under new name. Follow the instructions on page 22 to upload it to the board.
 
+![Teensy config.h setup](../_media/teensy-basic-segmented-string-config-setup.png)
+
+```c
+#ifdef CONFIG_TOP
+#include "v3_config.h"
+#define NUM_BLADES 1
+#define NUM_BUTTONS 2
+#define VOLUME 1000
+const unsigned int maxLedsPerStrip = 144;
+#define CLASH_THRESHOLD_G 1.0
+#define ENABLE_AUDIO
+#define ENABLE_MOTION
+#define ENABLE_WS2811
+#define ENABLE_SD
+#endif
+
+#ifdef CONFIG_PRESETS
+Preset presets[] = {
+    // Preset
+    {"TeensySF", "tracks/venus.wav", StyleNormalPtr<CYAN, WHITE, 300, 800>(), "Ignition"}
+};
+BladeConfig blades[] = {
+    // LED string configuration
+    {0, StringBladePtr<Blue3mmLED, 20, White3mmLED>(), CONFIGARRAY(presets) },
+};
+#endif
+
+#ifdef CONFIG_BUTTONS
+Button PowerButton(BUTTON_POWER, powerButtonPin, "pow");
+Button AuxButton(BUTTON_AUX, auxPin, "aux");
+#endif
+
+```
+
 ## Accent LEDs wiring diagram (optional)
 Accent LEDs work with TeensySaber board as additional “blades” when powered by LED outputs 4, 5, 6 with FETs. So they can have any effect that blade can have. If no effects needed, accent led can be powered just by a 3.3V output pad (power-on led indication).
 
