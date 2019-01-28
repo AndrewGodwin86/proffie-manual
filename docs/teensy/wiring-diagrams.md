@@ -239,6 +239,101 @@ Accent LEDs work with TeensySaber board as additional “blades” when powered 
 
 ![Teensy Accent LEDs](../_media/teensy-accent-leds.png)
 
+### Option b)
+```c
+#ifdef CONFIG_TOP
+#include "v3_config.h"
+#define NUM_BLADES 4 // 1 main blade, 3 accent LEDs
+#define NUM_BUTTONS 2
+#define VOLUME 1000
+const unsigned int maxLedsPerStrip = 144;
+#define CLASH_THRESHOLD_G 1.0
+#define ENABLE_AUDIO
+#define ENABLE_MOTION
+#define ENABLE_WS2811
+#define ENABLE_SD
+#endif
+
+#ifdef CONFIG_PRESETS
+Preset presets[] = {
+  {
+    "TeensySF", "tracks/venus.wav",
+    // Main blade style (effects)
+    StyleNormalPtr<CYAN, WHITE, 300, 800>(),
+    // 3 accent LEDs style (effects)
+    StyleNormalPtr<WHITE, WHITE, 300, 800>(),
+    StyleNormalPtr<BLUE, BLUE, 300, 800>(),
+    StyleNormalPtr<RED, RED, 300, 800>()
+    "cyan"
+  }
+};
+BladeConfig blades[] = {
+  {
+    0, WS2811BladePtr<144, WS2811_ACTUALLY_800kHz | WS2811_GRB>(),
+    // 3 accent LEDs configurations:
+    SimpleBladePtr<CreeXPE2White, NoLED, NoLED, NoLED, bladePowerPin4, -1, -1, -1>(),
+    SimpleBladePtr<CreeXPE2Blue, NoLED, NoLED, NoLED, bladePowerPin5, -1, -1, -1>(),
+    SimpleBladePtr<CreeXPE2Red, NoLED, NoLED, NoLED, bladePowerPin6, -1, -1, -1>(),
+
+    CONFIGARRAY(presets) 
+  },
+};
+#endif
+
+#ifdef CONFIG_BUTTONS
+Button PowerButton(BUTTON_POWER, powerButtonPin, "pow");
+Button AuxButton(BUTTON_AUX, auxPin, "aux");
+#endif
+
+```
+
+
+### Option c)
+```c
+#ifdef CONFIG_TOP
+#include "v3_config.h"
+#define NUM_BLADES 2 // 1 main and 1 RGB accent LED
+#define NUM_BUTTONS 2
+#define VOLUME 1000
+const unsigned int maxLedsPerStrip = 144;
+#define CLASH_THRESHOLD_G 1.0
+#define ENABLE_AUDIO
+#define ENABLE_MOTION
+#define ENABLE_WS2811
+#define ENABLE_SD
+#endif
+
+#ifdef CONFIG_PRESETS
+Preset presets[] = {
+  {
+    "TeensySF", "tracks/venus.wav",
+    // Main blade style (effects)
+    StyleNormalPtr<CYAN, WHITE, 300, 800>(),
+    // Accent LED style (effects)
+    StyleNormalPtr<WHITE, WHITE, 300, 800>(),
+    "cyan"
+  }
+};
+BladeConfig blades[] = {
+  {
+    0, WS2811BladePtr<144, WS2811_ACTUALLY_800kHz | WS2811_GRB>(),
+    // RGB accent LED configuration:
+    SimpleBladePtr<CreeXPE2Red, CreeXPE2Green, CreeXPE2Blue, NoLED, bladePowerPin4, bladePowerPin5, bladePowerPin6, -1>(),
+
+    CONFIGARRAY(presets) 
+  },
+};
+#endif
+
+#ifdef CONFIG_BUTTONS
+Button PowerButton(BUTTON_POWER, powerButtonPin, "pow");
+Button AuxButton(BUTTON_AUX, auxPin, "aux");
+#endif
+
+```
+
+![Teensy Accent LEDs config.h setup](../_media/teensy-accent-leds-config-setup.png)
+
 ## OLED display wiring diagram (optional)
 SSD1306 128x32 pixels OLED display allows to show battery level, current preset name, play different animations and even simple games. It can be wired to any blade configuration and requires just one additional line in the code to work. You can get monochrome display in white or blue color.
 
