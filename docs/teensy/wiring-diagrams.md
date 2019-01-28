@@ -105,11 +105,10 @@ BladeConfig blades[] = {
     /* LED 2 config */ 
     SimpleBladePtr<CreeXPE2RedTemplate<1000>, CreeXPE2GreenTemplate<0>, CreeXPE2BlueTemplate<240>,
     NoLED, bladePowerPin4, bladePowerPin5, bladePowerPin6, -1>(), 
-    
+
     CONFIGARRAY(presets) 
  },
 };
-
 
 #endif
 
@@ -125,6 +124,69 @@ Button AuxButton(BUTTON_AUX, auxPin, "aux");
 
 ### config.h file setup 
 Use a given or build your wiring diagram on [THIS PAGE](https://fredrik.hubbe.net/lightsaber/v3/), then open any _config.h file in the “lightsaber>config” folder directory in any Text Editor (Notepad - to see code correctly in Notepad, Cut-and-Paste it to WordPad, then Cut-and-Paste it back to Notepad, Save), **Ctrl+A** (select all text) and **Delete** it, then **Copy-and-Paste (Ctrl+C, Ctrl+V)** your wiring diagram config code (example below) into empty _config.h file and **Save** it under new name. Follow [these instructions](/teensy/firmware-upload-update) to upload it to the board.
+
+![Teensy Basic Neopixel config.h setup](../_media/teensy-basic-neopixel-config-setup.png)
+
+```c
+#ifdef CONFIG_TOP
+#include "v3_config.h"          /* TeensySaber V3 config setup */
+#define NUM_BLADES 1            /* Number of blades used */
+#define NUM_BUTTONS 2           /* Number of buttons used (1-3) */
+#define VOLUME 1000             /* Volume level (0 - 3000) */
+const unsigned int maxLedsPerStrip = 144;
+#define CLASH_THRESHOLD_G 1.0   /* Clash sensitivity (adjust lower/higher with 0.1 step) */
+#define ENABLE_AUDIO
+#define ENABLE_MOTION
+#define ENABLE_WS2811
+#define ENABLE_SD
+#endif
+
+#ifdef CONFIG_PRESETS
+Preset presets[] = {
+  /* Preset 1 */
+  { "TeensySF", "tracks/mars.wav",
+    StylePtr<IgnitionDelay<0, InOutHelper<SimpleClash<Lockup<Blast<Blue,White>,AudioFlicker<Blue,WHITE>>White>, 300, 800>>>(),
+    StylePtr<IgnitionDelay<800, InOutHelper<SimpleClash<Lockup<Blast<Blue,White>,AudioFlicker<Blue,WHITE>>White>, 300, 800>>>(),
+    StylePtr<IgnitionDelay<800, InOutHelper<SimpleClash<Lockup<Blast<Blue,White>,AudioFlicker<Blue,WHITE>>White>, 300, 800>>>(),
+  },   
+   
+  /* Preset 2 */
+  { "SmthJedi", "tracks/mercury.wav",
+    StyleNormalPtr<RED, WHITE, 200, 300>(),
+    StyleNormalPtr<RED, WHITE, 200, 300>(),
+    StyleNormalPtr<RED, WHITE, 200, 300>()
+  },
+
+  /* Preset... */
+  { "SmthGrey", "tracks/venus.wav",
+    StyleRainbowPtr<300, 800>(),
+    StyleRainbowPtr<300, 800>(),
+    StyleRainbowPtr<300, 800>()
+  },
+};
+
+/* LED Configuration */
+BladeConfig blades[] = {
+  {
+    0, // blade ID resistor not used
+    // Main blade, 118 LEDs
+    WS2811BladePtr<118, WS2811 800kHz | WS2811 GRB>(),
+    // First crossguard, 26 LEDs, power on LED4, data on pin 7
+    WS2811BladePtr<118, WS2811 800kHz | WS2811 GRB, 7, PowerPINS<bladePowerPin4> >(),
+    // Second crossguard, 26 LEDs, power on LED5, data on pin 8
+    WS2811BladePtr<118, WS2811 800kHz | WS2811 GRB, 7, PowerPINS<bladePowerPin4> >(),
+
+    CONFIGARRAY(presets) 
+ },
+};
+#endif
+
+#ifdef CONFIG_BUTTONS
+Button PowerButton(BUTTON_POWER, powerButtonPin, "pow");
+Button AuxButton(BUTTON_AUX, auxPin, "aux");
+#endif
+
+```
 
 ## Basic Segmented string wiring diagram
 ![Teensy Basic Segmented String diagram](../_media/teensy-basic-segmented-string.png)
