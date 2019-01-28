@@ -239,7 +239,7 @@ Accent LEDs work with TeensySaber board as additional “blades” when powered 
 
 ![Teensy Accent LEDs](../_media/teensy-accent-leds.png)
 
-### Option b)
+### Option b) - 3 accent leds with independent effects + 1 or more simple accent leds without effects
 ```c
 #ifdef CONFIG_TOP
 #include "v3_config.h"
@@ -288,7 +288,7 @@ Button AuxButton(BUTTON_AUX, auxPin, "aux");
 ```
 
 
-### Option c)
+### Option c) - 1 RGB accent led + 1 or more simple accent leds without effects
 ```c
 #ifdef CONFIG_TOP
 #include "v3_config.h"
@@ -331,8 +331,6 @@ Button AuxButton(BUTTON_AUX, auxPin, "aux");
 #endif
 
 ```
-
-![Teensy Accent LEDs config.h setup](../_media/teensy-accent-leds-config-setup.png)
 
 ## OLED display wiring diagram (optional)
 SSD1306 128x32 pixels OLED display allows to show battery level, current preset name, play different animations and even simple games. It can be wired to any blade configuration and requires just one additional line in the code to work. You can get monochrome display in white or blue color.
