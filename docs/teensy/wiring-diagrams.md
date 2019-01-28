@@ -43,14 +43,88 @@ or on the bottom depending on where you want to put Teensy 3.2 board.
 ![Teensy Basic Tri-Cree diagram](../_media/teensy-basic-tri-cree.png)
 
 [LED Resistor Calculator](https://www.thecustomsabershop.com/LedCalc.aspx)
+
 ### config.h file setup 
 Use a given or build your wiring diagram on [THIS PAGE](https://fredrik.hubbe.net/lightsaber/v3/), then open any _config.h file in the “lightsaber>config” folder directory in any Text Editor (Notepad - to see code correctly in Notepad, Cut-and-Paste it to WordPad, then Cut-and-Paste it back to Notepad, Save), Ctrl+A (select all text) and Delete it, then Copy-and-Paste (Ctrl+C, Ctrl+V) your wiring diagram config code (example below) into empty _config.h file and Save it under new name. Follow [these instructions](/teensy/firmware-upload-update) to upload it to the board.
+
+![Teensy Basic Tri-Cree config.h setup](../_media/teensy-basic-tri-cree-config-setup.png)
+
+```c
+#ifdef CONFIG_TOP
+#include "v3_config.h"
+#define NUM_BLADES 2                /* Number of blades used */
+#define NUM_BUTTONS 2               /* Number of buttons used (1-3) */
+#define VOLUME 1000                 /* Volume level (0 - 3000) */
+const unsigned int maxLedsPerStrip = 144;
+#define CLASH_THRESHOLD_G 1.0       /* Clash sensitivity (adjust lower or higher with 0.1 step) */
+#define ENABLE_AUDIO
+#define ENABLE_MOTION
+#define ENABLE_WS2811
+#define ENABLE_SD
+#endif
+
+#ifdef CONFIG_PRESETS
+Preset presets[] = {
+    /* Preset 1 */
+   { "TeensySF", "tracks/venus.wav",
+    StyleNormalPtr<CYAN, WHITE, 300, 800>(),            /* Blade 1 style */
+    StyleNormalPtr<CYAN, WHITE, 300, 800>(), "cyan"},   /* Blade 2 style (not needed if only using 1 blade */
+   
+   /* Preset 2 */
+   { "SmthJedi", "tracks/mars.wav",
+    StylePtr<InOutSparkTip<EASYBLADE(BLUE, WHITE), 300, 800> >(),
+    StylePtr<InOutSparkTip<EASYBLADE(BLUE, WHITE), 300, 800> >(), "blue"},
+
+    /* Preset... */
+   { "SmthGrey", "tracks/mercury.wav",
+    StyleNormalPtr<RED, WHITE, 300, 800>(),
+    StyleNormalPtr<RED, WHITE, 300, 800>(), "red"},
+   { "SmthFuzz", "tracks/uranus.wav",
+    StylePtr<InOutHelper<EASYBLADE(OnSpark<GREEN>, WHITE), 300, 800> >(),
+    StylePtr<InOutHelper<EASYBLADE(OnSpark<GREEN>, WHITE), 300, 800> >(), "green"},
+   { "RgueCmdr", "tracks/venus.wav",
+    StyleNormalPtr<WHITE, RED, 300, 800, RED>(),
+    StyleNormalPtr<WHITE, RED, 300, 800, RED>(), "white"},
+   { "TthCrstl", "tracks/mars.wav",
+    StyleNormalPtr<AudioFlicker<YELLOW, WHITE>, BLUE, 300, 800>(),
+    StyleNormalPtr<AudioFlicker<YELLOW, WHITE>, BLUE, 300, 800>(), "yellow"},
+   { "TeensySF", "tracks/mercury.wav",
+    StylePtr<InOutSparkTip<EASYBLADE(MAGENTA, WHITE), 300, 800> >(),
+    StylePtr<InOutSparkTip<EASYBLADE(MAGENTA, WHITE), 300, 800> >(), "magenta"},
+   { "SmthJedi", "tracks/uranus.wav",
+    StyleStrobePtr<WHITE, Rainbow, 15, 300, 800>(),
+    StyleStrobePtr<WHITE, Rainbow, 15, 300, 800>(), "strobe"}
+};
+
+/* LED Configuration */
+BladeConfig blades[] = {
+ { 0, 
+    /* LED 1 config */
+    SimpleBladePtr<CreeXPE2RedTemplate<1000>, CreeXPE2GreenTemplate<0>, CreeXPE2BlueTemplate<240>, NoLED>(),
+
+    /* LED 2 config */ 
+    SimpleBladePtr<CreeXPE2RedTemplate<1000>, CreeXPE2GreenTemplate<0>, CreeXPE2BlueTemplate<240>,
+    NoLED, bladePowerPin4, bladePowerPin5, bladePowerPin6, -1>(), 
+    
+    CONFIGARRAY(presets) 
+ },
+};
+
+
+#endif
+
+#ifdef CONFIG_BUTTONS
+Button PowerButton(BUTTON_POWER, powerButtonPin, "pow");
+Button AuxButton(BUTTON_AUX, auxPin, "aux");
+#endif
+```
+
 
 ## Basic Neopixel wiring diagram
 ![Teensy Basic Neopixel diagram](../_media/teensy-basic-neopixel.png)
 
 ### config.h file setup 
-Use a given or build your wiring diagram on [THIS PAGE](https://fredrik.hubbe.net/lightsaber/v3/), then open any _config.h file in the “lightsaber>config” folder directory in any Text Editor (Notepad - to see code correctly in Notepad, Cut-and-Paste it to WordPad, then Cut-and-Paste it back to Notepad, Save), Ctrl+A (select all text) and Delete it, then Copy-and-Paste (Ctrl+C, Ctrl+V) your wiring diagram config code (example below) into empty _config.h file and Save it under new name. Follow [these instructions](/teensy/firmware-upload-update) to upload it to the board.
+Use a given or build your wiring diagram on [THIS PAGE](https://fredrik.hubbe.net/lightsaber/v3/), then open any _config.h file in the “lightsaber>config” folder directory in any Text Editor (Notepad - to see code correctly in Notepad, Cut-and-Paste it to WordPad, then Cut-and-Paste it back to Notepad, Save), **Ctrl+A** (select all text) and **Delete** it, then **Copy-and-Paste (Ctrl+C, Ctrl+V)** your wiring diagram config code (example below) into empty _config.h file and **Save** it under new name. Follow [these instructions](/teensy/firmware-upload-update) to upload it to the board.
 
 ## Basic Segmented string wiring diagram
 ![Teensy Basic Segmented String diagram](../_media/teensy-basic-segmented-string.png)
