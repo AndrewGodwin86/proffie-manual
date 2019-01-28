@@ -341,6 +341,52 @@ SSD1306 128x32 pixels OLED display allows to show battery level, current preset 
 [SSD1306](https://www.ebay.com/itm/0-91-128x32-I2C-IIC-Serial-Blue-OLED-LCD-LED-Display-Module-12832-SSD1306/182371257748) - cheaper price  
 [SSD1306 just screen](https://www.ebay.com/itm/128x32-White-Blue-0-91in-OLED-bare-screen-Module-OLED-SSD1306-LCD-AU/323299955387) - blue or white select
 
+```c
+#ifdef CONFIG_TOP
+#include "v3_config.h"
+#define NUM_BLADES 1
+#define NUM_BUTTONS 2
+#define VOLUME 1000
+const unsigned int maxLedsPerStrip = 144;
+#define CLASH_THRESHOLD_G 1.0
+#define ENABLE_AUDIO
+#define ENABLE_MOTION
+#define ENABLE_WS2811
+#define ENABLE_SD
+#define ENABLE_SSD1306 // Add this line to enable OLED
+#endif
+
+#ifdef CONFIG_PRESETS
+Preset presets[] = {
+  { 
+    "TeensySF", "tracks/venus.wav",
+    StyleNormalPtr<CYAN, WHITE, 300, 800>(), 
+    "cyan" // display shows a preset name written in these quotes ".."
+  },
+  { 
+    "SmthJedi", "tracks/mars.wav",
+    StylePtr<InOutSparkTip<EASYBLADE(BLUE, WHITE), 300, 800> >(), 
+    "blue" // display shows a preset name written in these quotes ".."
+  },
+  {
+    "SmthGrey", "tracks/mercury.wav",
+    StyleFirePtr<RED, YELLOW>(), 
+    "fire" // display shows a preset name written in these quotes ".."
+  },
+  {
+    "SmthFuzz", "tracks/uranus.wav",
+    StyleNormalPtr<RED, WHITE, 300, 800>(), 
+    "red" // display shows a preset name written in these quotes ".."
+  },
+  {
+    "RgueCmdr", "tracks/venus.wav",
+    StyleFirePtr<BLUE, CYAN>(), 
+    "blue fire" // display shows a preset name written in these quotes ".."
+  },
+}
+
+```
+
 
 ## Bluetooth module wiring diagram (optional)
 Bluetooth modules **FSC-BT630** and **FSC-BT909** from Feasycom have been chosen over other modules on the market because of the best pcb size, quality, functionality and price point.  
