@@ -6,7 +6,7 @@
 ## LED Resistor Calculator
 [LED Calculator (TCSS)](https://www.thecustomsabershop.com/LedCalc.aspx)
 
-## More Info
+## Other useful links with more info
 - [TeensySaber V3 sound board instructions](https://fredrik.hubbe.net/lightsaber/v3/)
 - [ProffieBoard sound board instructions](https://fredrik.hubbe.net/lightsaber/v4/)
 - [”Blade style sharing” - here you can find and share custom blade styles](http://therebelarmory.com/thread/9273/teensysaber-blade-style-sharing-thread)
@@ -18,4 +18,6 @@
 - [Profezzorn’s Lab on FX-sabers forums](https://www.fx-sabers.com/forum/index.php?board=185.0)
 - [Ask your question in facebook group](https://www.facebook.com/groups/288564715213016/)
 
+
+## Latest ProffieOS firmware
 [Get the latest ProffieOS firmware](https://fredrik.hubbe.net/lightsaber/proffieos.html)
