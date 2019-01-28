@@ -26,13 +26,15 @@ THIS PORT ISN’T USED FOR CHARGING THE BATTERY!
 1. **IMPORTANT!**
 Cut the tiny trace with a knife between VIN and VUSB as shown.  
 Teensy 3.2, bottom view.
+![Teensy Board Assembly Step 1](../_media/teensy-board-assembly-step1.png)
 
 2. Solder 2.54mm header pins (gold plated recommended) to TeensySaber V3 board on the top 
 or on the bottom depending on where you want to put Teensy 3.2 board.  
 (please see next step).
+![Teensy Board Assembly Step 2](../_media/teensy-board-assembly-step2.png)
 
 3. Solder Teensy 3.2 board on top:  
-(A – micro USB port on top, SD card between boards) or on the bottom (B – SD card on top, micro USB port between boards).
+(**A** – micro USB port on top, SD card between boards) or on the bottom (**B** – SD card on top, micro USB port between boards).
 ![Solder Teensy 3.2 board on top](../_media/teensy-board-assembly-step3.png)
 
 
