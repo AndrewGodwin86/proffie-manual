@@ -170,11 +170,11 @@ BladeConfig blades[] = {
   {
     0, // blade ID resistor not used
     // Main blade, 118 LEDs
-    WS2811BladePtr<118, WS2811 800kHz | WS2811 GRB>(),
+    WS2811BladePtr<118, WS2811_800kHz | WS2811_GRB>(),
     // First crossguard, 26 LEDs, power on LED4, data on pin 7
-    WS2811BladePtr<118, WS2811 800kHz | WS2811 GRB, 7, PowerPINS<bladePowerPin4> >(),
+    WS2811BladePtr<118, WS2811_800kHz | WS2811_GRB, 7, PowerPINS<bladePowerPin4> >(),
     // Second crossguard, 26 LEDs, power on LED5, data on pin 8
-    WS2811BladePtr<118, WS2811 800kHz | WS2811 GRB, 7, PowerPINS<bladePowerPin4> >(),
+    WS2811BladePtr<118, WS2811_800kHz | WS2811_GRB, 7, PowerPINS<bladePowerPin4> >(),
 
     CONFIGARRAY(presets) 
  },
